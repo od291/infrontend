@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     const checkIfRegistered = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/check-responsable');
+        const response = await axios.get('http://inbackend-production.up.railway.app:3000/check-responsable');
         setIsRegistered(response.data.isRegistered);
       } catch (error) {
         console.error('Erreur lors de la vérification de l\'enregistrement', error);

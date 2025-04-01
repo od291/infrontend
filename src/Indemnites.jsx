@@ -20,7 +20,7 @@ function Indemnites() {
   const [searchType, setSearchType] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/indemnites')
+    fetch('http://inbackend-production.up.railway.app:3000/indemnites')
       .then(response => response.json())
       .then(data => {
         setIndemnitesData(data);
@@ -29,7 +29,7 @@ function Indemnites() {
         console.error('Error fetching data:', error);
       });
 
-    fetch('http://localhost:3000/personnels')
+    fetch('http://inbackend-production.up.railway.app:3000/personnels')
       .then(response => response.json())
       .then(data => {
         setPersonnelOptions(data);
@@ -38,7 +38,7 @@ function Indemnites() {
         console.error('Error fetching personnel data:', error);
       });
 
-    fetch('http://localhost:3000/responsables')
+    fetch('http://inbackend-production.up.railway.app:3000/responsables')
       .then(response => response.json())
       .then(data => {
         setResponsableOptions(data);
@@ -63,7 +63,7 @@ function Indemnites() {
 
   const handleDeleteClick = (id) => {
     if (window.confirm('Êtes-vous sûr de vouloir supprimer cette indemnité ?')) {
-      fetch(`http://localhost:3000/indemnites/${id}`, {
+      fetch(`http://inbackend-production.up.railway.app:3000/indemnites/${id}`, {
         method: 'DELETE'
       })
         .then(response => response.json())
@@ -113,7 +113,7 @@ function Indemnites() {
     e.preventDefault();
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
-      const url = modifyId ? `http://localhost:3000/indemnites/${modifyId}` : 'http://localhost:3000/indemnites';
+      const url = modifyId ? `http://inbackend-production.up.railway.app:3000/indemnites/${modifyId}` : 'http://inbackend-production.up.railway.app:3000/indemnites';
       const method = modifyId ? 'PUT' : 'POST';
 
       // Extract the fields that belong to indemnite
@@ -156,7 +156,7 @@ function Indemnites() {
   };
 
   const fetchIndemnitesByType = (type) => {
-    fetch(`http://localhost:3000/indemnites/type/${type}`)
+    fetch(`http://inbackend-production.up.railway.app:3000/indemnites/type/${type}`)
       .then(response => response.json())
       .then(data => {
         setIndemnitesData(data);

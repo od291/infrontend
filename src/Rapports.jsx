@@ -16,7 +16,7 @@ function Rapports() {
     }
 
     try {
-      const response = await axios.get('http://localhost:3000/rapports', {
+      const response = await axios.get('http://inbackend-production.up.railway.app:3000/rapports', {
         params: { startDate, endDate },
       });
 

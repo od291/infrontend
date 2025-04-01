@@ -68,7 +68,7 @@ const Register = ({ onRegisterSuccess }) => {
     });
 
     try {
-      await axios.post('http://localhost:3000/register', data, {
+      await axios.post('http://inbackend-production.up.railway.app:3000/register', data, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
