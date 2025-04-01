@@ -10,7 +10,7 @@ function Email() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://inbackend-production.up.railway.app/send-email', {
+      const response = await axios.post('https://inbackend-production.up.railway.app/send-email', {
         toEmail,
         subject,
         text: message

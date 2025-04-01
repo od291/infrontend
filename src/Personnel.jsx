@@ -20,7 +20,7 @@ function Personnel() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('http://inbackend-production.up.railway.app/')
+    fetch('https://inbackend-production.up.railway.app/')
       .then(response => response.json())
       .then(data => {
         setPersonnelData(data);
@@ -45,7 +45,7 @@ function Personnel() {
 
   const handleDeleteClick = (id) => {
     if (window.confirm('Êtes-vous sûr de vouloir supprimer ce personnel ?')) {
-      fetch(`http://inbackend-production.up.railway.app/${id}`, {
+      fetch(`https://inbackend-production.up.railway.app/${id}`, {
         method: 'DELETE'
       })
         .then(response => response.json())
@@ -97,7 +97,7 @@ function Personnel() {
     e.preventDefault();
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
-      const url = modifyId ? `http://inbackend-production.up.railway.app/${modifyId}` : 'http://inbackend-production.up.railway.app/';
+      const url = modifyId ? `https://inbackend-production.up.railway.app/${modifyId}` : 'https://inbackend-production.up.railway.app/';
       const method = modifyId ? 'PUT' : 'POST';
 
       fetch(url, {
