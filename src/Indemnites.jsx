@@ -20,7 +20,7 @@ function Indemnites() {
   const [searchType, setSearchType] = useState('');
 
   useEffect(() => {
-    fetch('https://inbackend-production.up.railway.app:3000/indemnites')
+    fetch('https://inbackend-production.up.railway.app/indemnites')
       .then(response => response.json())
       .then(data => {
         setIndemnitesData(data);
@@ -29,7 +29,7 @@ function Indemnites() {
         console.error('Error fetching data:', error);
       });
 
-    fetch('https://inbackend-production.up.railway.app:3000/personnels')
+    fetch('https://inbackend-production.up.railway.app/personnels')
       .then(response => response.json())
       .then(data => {
         setPersonnelOptions(data);
@@ -38,7 +38,7 @@ function Indemnites() {
         console.error('Error fetching personnel data:', error);
       });
 
-    fetch('https://inbackend-production.up.railway.app:3000/responsables')
+    fetch('https://inbackend-production.up.railway.app/responsables')
       .then(response => response.json())
       .then(data => {
         setResponsableOptions(data);
@@ -63,7 +63,7 @@ function Indemnites() {
 
   const handleDeleteClick = (id) => {
     if (window.confirm('Êtes-vous sûr de vouloir supprimer cette indemnité ?')) {
-      fetch(`https://inbackend-production.up.railway.app:3000/indemnites/${id}`, {
+      fetch(`https://inbackend-production.up.railway.app/indemnites/${id}`, {
         method: 'DELETE'
       })
         .then(response => response.json())
