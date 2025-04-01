@@ -14,7 +14,7 @@ function Home() {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const response = await axios.get('http://inbackend-production.up.railway.app:3000/dashboard');
+        const response = await axios.get('http://inbackend-production.up.railway.app/dashboard');
         setDashboardData(response.data);
       } catch (error) {
         console.error('Error fetching dashboard data:', error);
@@ -23,7 +23,7 @@ function Home() {
 
     const fetchChartData = async () => {
       try {
-        const response = await axios.get('http://inbackend-production.up.railway.app:3000/indemnity-types-per-personnel');
+        const response = await axios.get('http://inbackend-production.up.railway.app/indemnity-types-per-personnel');
         setChartData(response.data);
         console.log('Fetched chart data:', response.data);
       } catch (error) {

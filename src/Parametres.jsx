@@ -21,7 +21,7 @@ function Parametres() {
   const [modifyId, setModifyId] = useState(null);
 
   useEffect(() => {
-    fetch('http://inbackend-production.up.railway.app:3000/parametres')
+    fetch('http://inbackend-production.up.railway.app/parametres')
       .then(response => response.json())
       .then(data => {
         setResponsables(data);
@@ -114,7 +114,7 @@ function Parametres() {
     e.preventDefault();
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
-      const url = modifyId ? `http://inbackend-production.up.railway.app:3000/responsables/${modifyId}` : 'http://inbackend-production.up.railway.app:3000/responsables';
+      const url = modifyId ? `http://inbackend-production.up.railway.app/responsables/${modifyId}` : 'http://inbackend-production.up.railway.app/responsables';
       const method = modifyId ? 'PUT' : 'POST';
 
       const formDataToSend = new FormData();
@@ -159,7 +159,7 @@ function Parametres() {
     e.preventDefault();
     const newErrors = validatePasswordForm();
     if (Object.keys(newErrors).length === 0) {
-      const url = 'http://inbackend-production.up.railway.app:3000/password'; // Endpoint à définir dans votre backend
+      const url = 'http://inbackend-production.up.railway.app/password'; // Endpoint à définir dans votre backend
       const passwordPayload = {
         oldPassword: passwordData.oldPassword,
         newPassword: passwordData.newPassword

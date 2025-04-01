@@ -7,7 +7,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar, setActivePage, onLogout }) {
 
   useEffect(() => {
     // Fetch admin data
-    axios.get('http://inbackend-production.up.railway.app:3000/admin')
+    axios.get('http://inbackend-production.up.railway.app/admin')
       .then(response => {
         setAdmin(response.data);
       })
@@ -21,7 +21,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar, setActivePage, onLogout }) {
       <div className='sidebar-title'>
         <div className='sidebar-brand'>
           {admin.image && (
-            <img src={`http://inbackend-production.up.railway.app:3000/uploads/${admin.image}`} alt="photo_admin" className='icon_header' />
+            <img src={`http://inbackend-production.up.railway.app/uploads/${admin.image}`} alt="photo_admin" className='icon_header' />
           )}
         </div>
         <span className='icon close_icon' onClick={OpenSidebar}>X</span>

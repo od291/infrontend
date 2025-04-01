@@ -113,7 +113,7 @@ function Indemnites() {
     e.preventDefault();
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
-      const url = modifyId ? `http://inbackend-production.up.railway.app:3000/indemnites/${modifyId}` : 'http://inbackend-production.up.railway.app:3000/indemnites';
+      const url = modifyId ? `http://inbackend-production.up.railway.app/indemnites/${modifyId}` : 'http://inbackend-production.up.railway.app/indemnites';
       const method = modifyId ? 'PUT' : 'POST';
 
       // Extract the fields that belong to indemnite
@@ -156,7 +156,7 @@ function Indemnites() {
   };
 
   const fetchIndemnitesByType = (type) => {
-    fetch(`http://inbackend-production.up.railway.app:3000/indemnites/type/${type}`)
+    fetch(`http://inbackend-production.up.railway.app/indemnites/type/${type}`)
       .then(response => response.json())
       .then(data => {
         setIndemnitesData(data);
